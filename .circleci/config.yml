@@ -5,4 +5,6 @@ jobs:
       - image: circleci/php:7.2
     steps:
       - checkout
-      - run: find . -type d -name vendor -prune -o -type f -name "*.php" -print | xargs -n1 php -l
+      - run:
+          command:  find . -type d -name vendor -prune -o -type f -name "*.php" -print | xargs -n1 php -l
+          name: Syntax check
